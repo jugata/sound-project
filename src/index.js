@@ -16,13 +16,25 @@ select.addEventListener('change', pickTempo)
 
 
 const synths = [
+  // DRONE
+  new Tone.Synth(),
+  // Cell 1
+  new Tone.Synth(),
+  new Tone.Synth(),
+  new Tone.AMSynth(),
+  new Tone.Synth(),
+  //Long 5
+  new Tone.Synth(),
+  new Tone.MembraneSynth(),
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
+  // 11
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
+  new Tone.MembraneSynth(),
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
@@ -32,22 +44,33 @@ const synths = [
 const notes = [
   //drone
   ["C5", "C5"],
-  //cell1
+  //cell 1
   [[null, [null, "C4"]], "E4"],
-  ["E4", "F4", "E4", null],
+  [[null, [null, "C3"]], "E3", "F3", "E3"],
+  [null, "E4", "F4", "E4"],
+  //cell 4
   ["E4", "F4", "G4", null],
-  //cell4
-  ["C2", null, null, "C3", null, null, null],
-  [null, [null, ["C7", "C7"]], "C7", null, null, null, null, null],
-  ["G4", null, null, "G4", null, null, "F4", null],
-  //cell7
+  ["C2", null, "C3", null, null],
+  [null, [null, ["C7", "C7"]], "C7", null, null, null, null, [null, ["C6", "C6"]], "C6", null, null, null],
+  //cell 7
+  ["G3", "F3", "F3", null, null, null, [null], null],
   [null, ["B5", "G5"], null, null, null, [null, ["B4", "G4"]], null, null, null],
   [[null, "F4", "G4", "B4", "G4", "B4", "G4"], null, null, null, null, null],
-  ["F4", "G4", "B4", null, null, null, null, "C5", null, null, null],
-  //cell10
+  //cell 10
+  [[null, ["F4", "G4"]], "B4", null, [[null, "C5"], null], null, null],
   [null, [null, [null, "B5"]], "G5", [null, "G5", "F5", "G5"], null, null, null, "G5", null, null, null],
-  [["C4", "B3", "G3", "F3"]],
-  [["G2", "B2", "C3", "B2"], null, null, null, ["G4", "B4", "C5", "B4"], null, null, null, null, null]
+  ["C3", "B2", "G2", "Gb2"],
+  //cell 13
+  [["G2", "B2", "C3", "B2"], null, null, null, ["G4", "B4", "C5", "B4"], null, null, null, null, null],
+  [["B2", "C3", "B2", "C3", "B2"], null, null, null, ["B3", "C4", "B3", "C4", "B3"], null],
+  [["E3", "Gb3", "E3", "Gb3"], "E3", null, [null, "E3"], null, null],
+  //cell 16
+  [[null], "G5", null, null, null],
+  [["E5", "Gb5", "E5", "Gb5"], "G4", [null, "E5", "Gb5", "E5", "Gb5", "E5"], null, null, null, null],
+  ["E4", "E4", "E4", "E4", "E4", "Gb4", "G4", "A4", "B4", null, null, null, null, null]
+
+
+
 
 ];
 // create a synth
@@ -101,20 +124,20 @@ const cell4 = synths[4];
 const synthCell4 = new Tone.Sequence(
   function (time, note) {
     cell4.triggerAttackRelease(note, "10hz", time);
-    console.log("cell 4 triggered>>>>>")
+
   },
   notes[4],
-  "2n"
+  "8n"
 );
 
 const cell5 = synths[5];
 // create a new sequence with the synth and notes
 const synthCell5 = new Tone.Sequence(
   function (time, note) {
-    cell5.triggerAttackRelease(note, "10hz", time);
+    cell5.triggerAttackRelease(note, "1hz", time);
   },
   notes[5],
-  "4n"
+  "1t"
 );
 
 const cell6 = synths[6];
@@ -123,16 +146,16 @@ const synthCell6 = new Tone.Sequence(
     cell6.triggerAttackRelease(note, "10hz", time);
   },
   notes[6],
-  "2n"
+  "4n"
 );
 
 const cell7 = synths[7];
 const synthCell7 = new Tone.Sequence(
   function (time, note) {
-    cell7.triggerAttackRelease(note, "10hz", time);
+    cell7.triggerAttackRelease(note, "1hz", time);
   },
   notes[7],
-  "8n"
+  "1t"
 );
 
 const cell8 = synths[8];
@@ -141,7 +164,7 @@ const synthCell8 = new Tone.Sequence(
     cell8.triggerAttackRelease(note, "10hz", time);
   },
   notes[8],
-  "2n"
+  "8n"
 );
 
 const cell9 = synths[9];
@@ -150,16 +173,16 @@ const synthCell9 = new Tone.Sequence(
     cell9.triggerAttackRelease(note, "10hz", time);
   },
   notes[9],
-  "4n"
+  "2n"
 );
 
 const cell10 = synths[10];
 const synthCell10 = new Tone.Sequence(
   function (time, note) {
-    cell10.triggerAttackRelease(note, "10hz", time);
+    cell10.triggerAttackRelease(note, "0.5hz", time);
   },
   notes[10],
-  "4n"
+  "1t"
 );
 
 const cell11 = synths[11];
@@ -174,10 +197,64 @@ const synthCell11 = new Tone.Sequence(
 const cell12 = synths[12];
 const synthCell12 = new Tone.Sequence(
   function (time, note) {
-    cell12.triggerAttackRelease(note, "10hz", time);
+    cell12.triggerAttackRelease(note, "1hz", time);
   },
   notes[12],
+  "1n"
+);
+
+const cell13 = synths[13];
+const synthCell13 = new Tone.Sequence(
+  function (time, note) {
+    cell13.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[13],
   "4n"
+);
+
+const cell14 = synths[14];
+const synthCell14 = new Tone.Sequence(
+  function (time, note) {
+    cell14.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[14],
+  "2n"
+);
+
+const cell15 = synths[15];
+const synthCell15 = new Tone.Sequence(
+  function (time, note) {
+    cell15.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[15],
+  "4n"
+);
+
+const cell16 = synths[16];
+const synthCell16 = new Tone.Sequence(
+  function (time, note) {
+    cell16.triggerAttackRelease(note, "1hz", time);
+  },
+  notes[16],
+  "2n"
+);
+
+const cell17 = synths[17];
+const synthCell17 = new Tone.Sequence(
+  function (time, note) {
+    cell17.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[17],
+  "4n"
+);
+
+const cell18 = synths[18];
+const synthCell18 = new Tone.Sequence(
+  function (time, note) {
+    cell18.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[18],
+  "2t"
 );
 
 let dronePlay = false;
@@ -193,47 +270,43 @@ let playing9 = false;
 let playing10 = false;
 let playing11 = false;
 let playing12 = false;
+let playing13 = false;
+let playing14 = false;
+let playing15 = false;
+let playing16 = false;
+let playing17 = false;
+let playing18 = false;
 
 // STOP BUTTON
 document.getElementById("stop").addEventListener("click", function () {
   Tone.Transport.stop();
-
 });
 
 //DRONE
 document.getElementById("drone").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
   if (!dronePlay) {
-    Tone.Transport.start();
+    Tone.Transport.start("+0.1");
     droner.start()
     dronePlay = true;
   } else {
     droner.stop();
     dronePlay = false;
   }
-
 });
 
 document.getElementById("btn1").addEventListener("click", function () {
-  // Tone.Transport.start();
-  // synthCell1.start()
 
   if (!playing1) {
-    //Tone.Transport.start();
     synthCell1.start()
     playing1 = true;
   } else {
     synthCell1.stop();
     playing1 = false;
   }
-
-  //fetchData()
-  // fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json()).then(json => console.log(json))
-  //document.getElementById("demo").innerHTML = fetchFunc;
 });
 
 document.getElementById("btn2").addEventListener("click", function () {
-
   if (!playing2) {
     // Tone.Transport.start();
     synthCell2.start()
@@ -242,13 +315,10 @@ document.getElementById("btn2").addEventListener("click", function () {
     synthCell2.stop();
     playing2 = false;
   }
-
 });
 
 document.getElementById("btn3").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing3) {
-    //Tone.Transport.start();
     synthCell3.start();
     playing3 = true;
   } else {
@@ -270,9 +340,7 @@ document.getElementById("btn4").addEventListener("click", function () {
 });
 
 document.getElementById("btn5").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing5) {
-    //Tone.Transport.start();
     synthCell5.start();
     playing5 = true;
   } else {
@@ -282,9 +350,8 @@ document.getElementById("btn5").addEventListener("click", function () {
 });
 
 document.getElementById("btn6").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
+
   if (!playing6) {
-    //Tone.Transport.start();
     synthCell6.start();
     playing6 = true;
   } else {
@@ -294,9 +361,7 @@ document.getElementById("btn6").addEventListener("click", function () {
 });
 
 document.getElementById("btn7").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing7) {
-    //Tone.Transport.start();
     synthCell7.start();
     playing7 = true;
   } else {
@@ -306,7 +371,6 @@ document.getElementById("btn7").addEventListener("click", function () {
 });
 
 document.getElementById("btn8").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing8) {
     synthCell8.start();
     playing8 = true;
@@ -353,6 +417,61 @@ document.getElementById("btn12").addEventListener("click", function () {
   } else {
     synthCell12.stop();
     playing12 = false;
+  }
+});
+
+document.getElementById("btn13").addEventListener("click", function () {
+  if (!playing13) {
+    synthCell13.start();
+    playing13 = true;
+  } else {
+    synthCell13.stop();
+    playing13 = false;
+  }
+});
+document.getElementById("btn14").addEventListener("click", function () {
+  if (!playing14) {
+    synthCell14.start();
+    playing14 = true;
+  } else {
+    synthCell14.stop();
+    playing14 = false;
+  }
+});
+document.getElementById("btn15").addEventListener("click", function () {
+  if (!playing15) {
+    synthCell15.start();
+    playing15 = true;
+  } else {
+    synthCell15.stop();
+    playing15 = false;
+  }
+});
+document.getElementById("btn16").addEventListener("click", function () {
+  if (!playing16) {
+    synthCell16.start();
+    playing16 = true;
+  } else {
+    synthCell16.stop();
+    playing16 = false;
+  }
+});
+document.getElementById("btn17").addEventListener("click", function () {
+  if (!playing17) {
+    synthCell17.start();
+    playing17 = true;
+  } else {
+    synthCell17.stop();
+    playing17 = false;
+  }
+});
+document.getElementById("btn18").addEventListener("click", function () {
+  if (!playing18) {
+    synthCell18.start();
+    playing18 = true;
+  } else {
+    synthCell18.stop();
+    playing18 = false;
   }
 });
 
