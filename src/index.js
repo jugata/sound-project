@@ -2,7 +2,7 @@
 // const axios = require("axios");
 
 import * as Tone from "tone";
-//Tone.Transport.start();
+
 
 //TEMPO SELECTOR
 const select = document.getElementsByTagName('select')[0]
@@ -24,6 +24,8 @@ const synths = [
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
+  new Tone.Synth(),
+  new Tone.Synth(),
   new Tone.Synth()
 ];
 
@@ -36,9 +38,16 @@ const notes = [
   ["E4", "F4", "G4", null],
   //cell4
   ["C2", null, null, "C3", null, null, null],
-  [null, [null, ["C6", "C6"]], "C6", null, null, null, null, null],
-  ["G4", null, null, "G4", null, null, "F4", null]
-
+  [null, [null, ["C7", "C7"]], "C7", null, null, null, null, null],
+  ["G4", null, null, "G4", null, null, "F4", null],
+  //cell7
+  [null, ["B5", "G5"], null, null, null, [null, ["B4", "G4"]], null, null, null],
+  [[null, "F4", "G4", "B4", "G4", "B4", "G4"], null, null, null, null, null],
+  ["F4", "G4", "B4", null, null, null, null, "C5", null, null, null],
+  //cell10
+  [null, [null, [null, "B5"]], "G5", [null, "G5", "F5", "G5"], null, null, null, "G5", null, null, null],
+  [["C4", "B3", "G3", "F3"]],
+  [["G2", "B2", "C3", "B2"], null, null, null, ["G4", "B4", "C5", "B4"], null, null, null, null, null]
 
 ];
 // create a synth
@@ -62,7 +71,6 @@ const cell1 = synths[1];
 const synthCell1 = new Tone.Sequence(
   function (time, note) {
     cell1.triggerAttackRelease(note, "10hz", time);
-    console.log("cell 1 triggered>>>>>")
   },
   notes[1],
   "8n"
@@ -98,17 +106,6 @@ const synthCell4 = new Tone.Sequence(
   notes[4],
   "2n"
 );
-/*
-const cell4 = synths[4];
-const synthCell4 = new Tone.Sequence(
-  function (time, note) {
-    cell4.triggerAttackRelease(note, "10hz", time);
-    console.log("cell 4 triggered>>>>>")
-  },
-  notes[4],
-  "2n"
-);
-*/
 
 const cell5 = synths[5];
 // create a new sequence with the synth and notes
@@ -121,7 +118,6 @@ const synthCell5 = new Tone.Sequence(
 );
 
 const cell6 = synths[6];
-// create a new sequence with the synth and notes
 const synthCell6 = new Tone.Sequence(
   function (time, note) {
     cell6.triggerAttackRelease(note, "10hz", time);
@@ -130,6 +126,59 @@ const synthCell6 = new Tone.Sequence(
   "2n"
 );
 
+const cell7 = synths[7];
+const synthCell7 = new Tone.Sequence(
+  function (time, note) {
+    cell7.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[7],
+  "8n"
+);
+
+const cell8 = synths[8];
+const synthCell8 = new Tone.Sequence(
+  function (time, note) {
+    cell8.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[8],
+  "2n"
+);
+
+const cell9 = synths[9];
+const synthCell9 = new Tone.Sequence(
+  function (time, note) {
+    cell9.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[9],
+  "4n"
+);
+
+const cell10 = synths[10];
+const synthCell10 = new Tone.Sequence(
+  function (time, note) {
+    cell10.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[10],
+  "4n"
+);
+
+const cell11 = synths[11];
+const synthCell11 = new Tone.Sequence(
+  function (time, note) {
+    cell11.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[11],
+  "4n"
+);
+
+const cell12 = synths[12];
+const synthCell12 = new Tone.Sequence(
+  function (time, note) {
+    cell12.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[12],
+  "4n"
+);
 
 let dronePlay = false;
 let playing1 = false;
@@ -140,10 +189,15 @@ let playing5 = false;
 let playing6 = false;
 let playing7 = false;
 let playing8 = false;
+let playing9 = false;
+let playing10 = false;
+let playing11 = false;
+let playing12 = false;
 
 // STOP BUTTON
 document.getElementById("stop").addEventListener("click", function () {
   Tone.Transport.stop();
+
 });
 
 //DRONE
@@ -165,7 +219,7 @@ document.getElementById("btn1").addEventListener("click", function () {
   // synthCell1.start()
 
   if (!playing1) {
-    Tone.Transport.start();
+    //Tone.Transport.start();
     synthCell1.start()
     playing1 = true;
   } else {
@@ -181,7 +235,7 @@ document.getElementById("btn1").addEventListener("click", function () {
 document.getElementById("btn2").addEventListener("click", function () {
 
   if (!playing2) {
-    Tone.Transport.start();
+    // Tone.Transport.start();
     synthCell2.start()
     playing2 = true;
   } else {
@@ -194,7 +248,7 @@ document.getElementById("btn2").addEventListener("click", function () {
 document.getElementById("btn3").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing3) {
-    Tone.Transport.start();
+    //Tone.Transport.start();
     synthCell3.start();
     playing3 = true;
   } else {
@@ -206,7 +260,7 @@ document.getElementById("btn3").addEventListener("click", function () {
 document.getElementById("btn4").addEventListener("click", function () {
 
   if (!playing4) {
-    Tone.Transport.start();
+    // Tone.Transport.start();
     synthCell4.start();
     playing4 = true;
   } else {
@@ -218,7 +272,7 @@ document.getElementById("btn4").addEventListener("click", function () {
 document.getElementById("btn5").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing5) {
-    Tone.Transport.start();
+    //Tone.Transport.start();
     synthCell5.start();
     playing5 = true;
   } else {
@@ -230,12 +284,75 @@ document.getElementById("btn5").addEventListener("click", function () {
 document.getElementById("btn6").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
   if (!playing6) {
-    Tone.Transport.start();
+    //Tone.Transport.start();
     synthCell6.start();
     playing6 = true;
   } else {
     synthCell6.stop();
     playing6 = false;
+  }
+});
+
+document.getElementById("btn7").addEventListener("click", function () {
+  //synths[0].triggerAttackRelease("C6", "16n");
+  if (!playing7) {
+    //Tone.Transport.start();
+    synthCell7.start();
+    playing7 = true;
+  } else {
+    synthCell7.stop();
+    playing7 = false;
+  }
+});
+
+document.getElementById("btn8").addEventListener("click", function () {
+  //synths[0].triggerAttackRelease("C6", "16n");
+  if (!playing8) {
+    synthCell8.start();
+    playing8 = true;
+  } else {
+    synthCell8.stop();
+    playing8 = false;
+  }
+});
+
+document.getElementById("btn9").addEventListener("click", function () {
+  if (!playing9) {
+    synthCell9.start();
+    playing9 = true;
+  } else {
+    synthCell9.stop();
+    playing9 = false;
+  }
+});
+
+document.getElementById("btn10").addEventListener("click", function () {
+  if (!playing10) {
+    synthCell10.start();
+    playing10 = true;
+  } else {
+    synthCell10.stop();
+    playing10 = false;
+  }
+});
+
+document.getElementById("btn11").addEventListener("click", function () {
+  if (!playing11) {
+    synthCell11.start();
+    playing11 = true;
+  } else {
+    synthCell11.stop();
+    playing11 = false;
+  }
+});
+
+document.getElementById("btn12").addEventListener("click", function () {
+  if (!playing12) {
+    synthCell12.start();
+    playing12 = true;
+  } else {
+    synthCell12.stop();
+    playing12 = false;
   }
 });
 

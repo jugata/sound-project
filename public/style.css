@@ -38,9 +38,11 @@ header {
 }
 
  button {
+   width: 140px;
    background-color: #8FC93A;
    color: #E7F3F3;
    align-content: center;
+   margin-top: 10px;
    font-size: 16px;
    border-radius: 5px;
  }
