@@ -15,13 +15,28 @@ function pickTempo(event) {
 select.addEventListener('change', pickTempo)
 
 
+
+
+var synthA = new Tone.Synth({
+  oscillator: {
+    type: 'fmsquare'
+  },
+  envelope: {
+    attack: 2,
+    decay: 1,
+    sustain: 0.4,
+    release: 4
+  }
+}).toMaster()
+
+
 const synths = [
   // DRONE
   new Tone.Synth(),
   // Cell 1
   new Tone.Synth(),
   new Tone.Synth(),
-  new Tone.AMSynth(),
+  new Tone.Synth(),
   new Tone.Synth(),
   //Long 5
   new Tone.Synth(),
@@ -46,7 +61,7 @@ const notes = [
   ["C5", "C5"],
   //cell 1
   [[null, [null, "C4"]], "E4"],
-  [[null, [null, "C3"]], "E3", "F3", "E3"],
+  [[null, [null, "C5"]], "E5", "F5", "E5"],
   [null, "E4", "F4", "E4"],
   //cell 4
   ["E4", "F4", "G4", null],
@@ -57,7 +72,7 @@ const notes = [
   [null, ["B5", "G5"], null, null, null, [null, ["B4", "G4"]], null, null, null],
   [[null, "F4", "G4", "B4", "G4", "B4", "G4"], null, null, null, null, null],
   //cell 10
-  [[null, ["F4", "G4"]], "B4", null, [[null, "C5"], null], null, null],
+  [[null, ["F4", "G4"]], "B4", null, [[null, "C5", [null]], null], null, null],
   [null, [null, [null, "B5"]], "G5", [null, "G5", "F5", "G5"], null, null, null, "G5", null, null, null],
   ["C3", "B2", "G2", "Gb2"],
   //cell 13
@@ -130,7 +145,7 @@ const synthCell4 = new Tone.Sequence(
   "8n"
 );
 
-const cell5 = synths[5];
+const cell5 = synthA//synths[5];
 // create a new sequence with the synth and notes
 const synthCell5 = new Tone.Sequence(
   function (time, note) {
@@ -294,6 +309,8 @@ document.getElementById("drone").addEventListener("click", function () {
     dronePlay = false;
   }
 });
+
+
 
 document.getElementById("btn1").addEventListener("click", function () {
 
@@ -557,3 +574,35 @@ document.querySelector('button').addEventListener('click', async () => {
   console.log('audio is ready first')
 })
 */
+
+/**
+ * let chosenCell;
+function pickCell(event) {
+  chosenCell = event.target.value
+}
+
+function addTone(event) {
+  const target = event.target
+  if (target.tagName !== 'button') {
+    return
+  }
+  if (target.className === chosenCell) {
+    target.className = ''
+  } else {
+    target.className = chosenColor
+  }
+}
+
+//refactor attempt
+document.getElementsByClassName("div2").addEventListener("click", function () {
+
+  if (!playing1) {
+    synthCell1.start()
+    playing1 = true;
+  } else {
+    synthCell1.stop();
+    playing1 = false;
+  }
+});
+
+ */
