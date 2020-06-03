@@ -493,32 +493,6 @@ document.getElementById("btn18").addEventListener("click", function () {
 });
 
 
-//synth.triggerAttackRelease("E4", "8n");
-// fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json()).then(json => console.log(json))
-
-// const synth = new Tone.Synth().toDestination();
-// new Tone.DuoSynth()
-// new Tone.PluckSynth()
-
-/*
-if (!playing) {
-  Tone.Transport.start();
-  synthCell1.start()
-  playing = true;
-} else {
-  Tone.Transport.stop();
-  playing = false;
-}
-*/
-
-// Setup the synth to be ready to play on beat 1
-// synthPart.start();
-// Note that if you pass a time into the start method
-// you can specify when the synth part starts
-// e.g. .start('8n') will start after 1 eighth note
-// start the transport which controls the main timeline
-//Tone.Transport.start();
-
 
 
 
