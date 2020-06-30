@@ -1,8 +1,5 @@
-//import { Synth, Transport } from "tone";
-// const axios = require("axios");
-
 import * as Tone from "tone";
-
+console.log("TONE IS >>>>>>>>", Tone)
 
 //TEMPO SELECTOR
 const select = document.getElementsByTagName('select')[0]
@@ -84,13 +81,10 @@ const notes = [
   [["E5", "Gb5", "E5", "Gb5"], "G4", [null, "E5", "Gb5", "E5", "Gb5", "E5"], null, null, null, null],
   ["E4", "E4", "E4", "E4", "E4", "Gb4", "G4", "A4", "B4", null, null, null, null, null]
 
-
-
-
 ];
 // create a synth
 //Hooks up each synth to speakers
-synths.forEach(synth => synth.toDestination());
+synths.forEach(synth => synth.toMaster());
 
 //DRONE SYNTH
 const drone = synths[0];
@@ -98,6 +92,7 @@ const drone = synths[0];
 //const notes = ["C5", "C5"];
 // create a new sequence with the synth and notes
 const droner = new Tone.Sequence(
+
   function (time, note) {
     drone.triggerAttackRelease(note, "10hz", time);
   },
@@ -300,7 +295,12 @@ document.getElementById("stop").addEventListener("click", function () {
 //DRONE
 document.getElementById("drone").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
+
   if (!dronePlay) {
+    if (Tone.context.state !== 'running') {
+      console.log("here")
+      Tone.context.resume();
+    }
     Tone.Transport.start("+0.1");
     droner.start()
     dronePlay = true;
@@ -492,91 +492,3 @@ document.getElementById("btn18").addEventListener("click", function () {
   }
 });
 
-
-
-
-
-
-
-
-// Tone.Transport.scheduleRepeat(repeat, '8n')
-// Tone.Transport.start();
-//play a note every quarter-note
-// const loop = new Tone.Loop(time => {
-//   synth.triggerAttackRelease("C2", "8n", time);
-// }, "4n");
-
-// function fetchData() {
-//   fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json()).then(json => console.log(json))
-// }
-/* AXIOS CALL
-function fetchData() {
-  axios.get('https://jsonplaceholder.typicode.com/todos/1')
-    .then(function (response) {
-      console.log('hi', response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-*/
-/*
-let loopBeat;
-let bassSynth;
-
-function setup() {
-  bassSynth = new Tone.MembraneSynth().toMaster();
-
-  loopBeat = new Tone.Loop(song, '4n');
-
-  Tone.Transport.bpm.value = 140;
-  Tone.Transport.start();
-  loopBeat.start(0);
-
-}
-function song(time) {
-  bass.synth.triggerAttackRelease('G', '8n', time)
-  console.log(time)
-}
-*/
-
-
-
-/*
-document.querySelector('button').addEventListener('click', async () => {
-  await Tone.start()
-  console.log('audio is ready first')
-})
-*/
-
-/**
- * let chosenCell;
-function pickCell(event) {
-  chosenCell = event.target.value
-}
-
-function addTone(event) {
-  const target = event.target
-  if (target.tagName !== 'button') {
-    return
-  }
-  if (target.className === chosenCell) {
-    target.className = ''
-  } else {
-    target.className = chosenColor
-  }
-}
-
-//refactor attempt
-document.getElementsByClassName("div2").addEventListener("click", function () {
-
-  if (!playing1) {
-    synthCell1.start()
-    playing1 = true;
-  } else {
-    synthCell1.stop();
-    playing1 = false;
-  }
-});
-
- */

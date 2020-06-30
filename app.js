@@ -7,11 +7,9 @@ const app = express()
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "./public")))
 
-app.get('/', (req, res, next) => {
-  res.send("HI")
-})
+const PORT = 3000
 
 
-app.listen(3001, function () {
-  console.log("server is up and running")
+app.listen(PORT, function () {
+  console.log(`start making music at localhost:${PORT}`)
 })
