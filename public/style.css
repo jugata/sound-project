@@ -1,25 +1,24 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
-  background-color: #E7F3F3;
-
+  background-color: #27187E;
+  color: #FFFAFF
 }
 
 header {
-  height: 100px;
+  height: 120px;
   display: flex;
-  justify-content: space-evenly;
-  background-color:#3D3B8E;
-  text-shadow: 2px 2px blue;
-  box-shadow: 5px 7px #888888;
+  justify-content: space-around;
+  background-color:#197BBD;
+  text-shadow: 2px 2px #5B6057;
+  box-shadow: 3px 5px #5B6057;
   border-radius: 5px;
 
 }
 
  h1 {
-   color:#8FC93A;
-   font-size: 50px;
+   color:#06D6A0;
+   font-size: 60px;
    padding: 0
-
  }
  #controls {
    display: flex;
@@ -29,8 +28,10 @@ header {
 
  .div1 {
    display: flex;
-   justify-content: center;
+   flex-direction: column;
+   align-items: center;
    margin-top: 40px;
+   color: white
  }
 
  .div2 {
@@ -40,20 +41,57 @@ header {
 }
 
  button {
-   width: 140px;
-   background-color: #8FC93A;
-   color: #E7F3F3;
+   height: 40px;
+   width: 180px;
+   background-color: #197BBD;
+   color: rgb(233, 225, 225);
+   text-shadow: 1px 1px  rgb(37, 35, 87);
    align-content: center;
    margin-top: 10px;
    font-size: 16px;
    border-radius: 5px;
+   /* box-shadow: 2px 2px #06D6A0; */
+ }
+
+ button:hover {
+	border-color: #93BEDF;
+}
+
+ #drone {
+   height: 40px;
+   background-color: #06D6A0;
+   color: #197BBD;
+   /* box-shadow: 2px 2px gray; */
+ }
+
+ #stop {
+   height: 40px;
+   background-color: #B8366A;
+   /* box-shadow: 2px 2px gray; */
  }
 
  select {
+   border-radius: 5px;
+   display: block;
+   font-size: 16px;
+   font-family: sans-serif;
+   font-weight: 700;
+   width: 120px;
+   height: 45px;
    background-color: #3D3B8E;
    color: white;
+   border-color: black;
+   margin-top: 5px;
+   text-align: center
  }
 
+ select:hover {
+	border-color: #93BEDF;
+}
+
+select:focus {
+  outline: none;
+}
 
  .active {
   background-color: rgb(89, 128, 31);

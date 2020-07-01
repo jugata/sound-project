@@ -6,7 +6,6 @@ const select = document.getElementsByTagName('select')[0]
 
 Tone.Transport.bpm.value = 100;
 function pickTempo(event) {
-  console.log(event.target.value, " is event.target.value")
   Tone.Transport.bpm.value = event.target.value;
 }
 select.addEventListener('change', pickTempo)
