@@ -215,15 +215,22 @@ let playing16 = false;
 let playing17 = false;
 let playing18 = false;
 
+
+const activeButtons = document.getElementsByClassName("active")
+
+const deactivate = (arr) => {
+  const arrayed = Array.from(arr)
+  if (Array.isArray(arrayed))
+    arrayed.forEach(element => element.className = "")
+}
 // STOP BUTTON
-document.getElementById("stop").addEventListener("click", async function () {
-  Tone.Transport.stop();
+document.getElementById("stop").addEventListener("click", function () {
+  deactivate(activeButtons)
+  Tone.Transport.stop()
 });
 
 //DRONE
 document.getElementById("drone").addEventListener("click", function () {
-  //synths[0].triggerAttackRelease("C6", "16n");
-
   if (!dronePlay) {
     // if (Tone.context.state !== 'running') {
     //   console.log("here")
