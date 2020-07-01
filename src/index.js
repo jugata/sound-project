@@ -2,7 +2,10 @@ import * as Tone from "tone";
 import { synths, notes } from './synths'
 import { synthCells } from './utils/synthCells'
 import { isPlaying } from './utils/playing'
-//TEMPO SELECTOR
+
+synths.forEach(synth => synth.toMaster());
+
+//=================TEMPO SELECTOR===================\\
 const select = document.getElementsByTagName('select')[0]
 
 Tone.Transport.bpm.value = 100;
@@ -11,27 +14,9 @@ function pickTempo(event) {
 }
 select.addEventListener('change', pickTempo)
 
-
-//Hooks up each synth to speakers
-synths.forEach(synth => synth.toMaster());
-
+//==================CLASS TOGGLING===================\\
 let dronePlay = false;
-
-//DRONE SYNTH
-const drone = synths[0];
-// create a new sequence with the synth and notes
-const droner = new Tone.Sequence(
-
-  function (time, note) {
-    drone.triggerAttackRelease(note, "10hz", time);
-  },
-  notes[0],
-  "8n"
-);
-
-
 const activeButtons = document.getElementsByClassName("active")
-
 const deactivate = (HTMLColl) => {
   const arrayed = Array.from(HTMLColl)
   if (Array.isArray(arrayed))
@@ -42,19 +27,27 @@ const deactivate = (HTMLColl) => {
     dronePlay = false
   }
   synthCells.forEach(synthCell => synthCell.stop())
-
 }
-// STOP BUTTON
+
+//=====================STOP=======================\\
 document.getElementById("stop").addEventListener("click", function () {
   deactivate(activeButtons)
   if (dronePlay) {
     dronePlay = false
   }
   Tone.Transport.stop()
-
 });
 
-//DRONE
+//==================DRONE===================\\
+const drone = synths[0];
+const droner = new Tone.Sequence(
+  function (time, note) {
+    drone.triggerAttackRelease(note, "10hz", time);
+  },
+  notes[0],
+  "8n"
+);
+
 const droneButton = document.getElementById("drone")
 
 droneButton.addEventListener("click", function () {
@@ -67,12 +60,10 @@ droneButton.addEventListener("click", function () {
     droner.stop();
     this.className = "inactive-drone"
     dronePlay = false;
-
   }
 });
-
+//==================CELL 1==================\\
 document.getElementById("1").addEventListener("click", function () {
-  console.log("???????", this.id)
   if (!dronePlay) {
     Tone.Transport.start("+0.1");
   }
@@ -87,12 +78,10 @@ document.getElementById("1").addEventListener("click", function () {
   }
 });
 
-
-//========= PLAYER FOR EACH CELL ===========\\
+//======================REMAINING CELLS=======================\\
 
 const player = (e) => {
   if (e.target.id !== "drone" && e.target.id !== "stop" && e.target.id !== "1") {
-    console.log(e.target.id)
     let id = e.target.id - 1
     console.log("in player", e.srcElement)
     if (!isPlaying[id]) {

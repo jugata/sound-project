@@ -1,3 +1,4 @@
+
 let playing1 = false;
 let playing2 = false;
 let playing3 = false;
@@ -17,7 +18,7 @@ let playing16 = false;
 let playing17 = false;
 let playing18 = false;
 
-export const isPlaying = [
+const isPlaying = [
   playing1,
   playing2,
   playing3,
@@ -37,3 +38,7 @@ export const isPlaying = [
   playing17,
   playing18,
 ]
+
+export {
+  isPlaying,
+}

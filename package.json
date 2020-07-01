@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -w",
+    "build:dev": "webpack -w",
+    "build:prod": "webpack -p",
     "start": "nodemon ./app.js"
   },
   "author": "",
