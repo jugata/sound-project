@@ -216,7 +216,7 @@ let playing17 = false;
 let playing18 = false;
 
 // STOP BUTTON
-document.getElementById("stop").addEventListener("click", function () {
+document.getElementById("stop").addEventListener("click", async function () {
   Tone.Transport.stop();
 });
 
@@ -255,11 +255,12 @@ document.getElementById("btn1").addEventListener("click", function () {
 
 document.getElementById("btn2").addEventListener("click", function () {
   if (!playing2) {
-
     synthCell2.start()
     playing2 = true;
+    this.className = "active"
   } else {
     synthCell2.stop();
+    this.className = ""
     playing2 = false;
   }
 });
