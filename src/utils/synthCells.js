@@ -1,10 +1,10 @@
-import * as Tone from "tone";
+import { Sequence } from "tone";
 import { synths, notes } from '../synths'
 
 
 
 const cell1 = synths[1];
-const synthCell1 = new Tone.Sequence(
+const synthCell1 = new Sequence(
   function (time, note) {
     cell1.triggerAttackRelease(note, "10hz", time);
   },
@@ -15,7 +15,7 @@ const synthCell1 = new Tone.Sequence(
 const cell2 = synths[2];
 // create an array of notes to be played
 // create a new sequence with the synth and notes
-const synthCell2 = new Tone.Sequence(
+const synthCell2 = new Sequence(
   function (time, note) {
     cell2.triggerAttackRelease(note, "10hz", time);
   },
@@ -25,7 +25,7 @@ const synthCell2 = new Tone.Sequence(
 
 const cell3 = synths[3];
 // create a new sequence with the synth and notes
-const synthCell3 = new Tone.Sequence(
+const synthCell3 = new Sequence(
   function (time, note) {
     cell3.triggerAttackRelease(note, "10hz", time);
   },
@@ -35,7 +35,7 @@ const synthCell3 = new Tone.Sequence(
 
 
 const cell4 = synths[4];
-const synthCell4 = new Tone.Sequence(
+const synthCell4 = new Sequence(
   function (time, note) {
     cell4.triggerAttackRelease(note, "10hz", time);
 
@@ -46,7 +46,7 @@ const synthCell4 = new Tone.Sequence(
 
 const cell5 = synths[5];
 // create a new sequence with the synth and notes
-const synthCell5 = new Tone.Sequence(
+const synthCell5 = new Sequence(
   function (time, note) {
     cell5.triggerAttackRelease(note, "1hz", time);
   },
@@ -55,7 +55,7 @@ const synthCell5 = new Tone.Sequence(
 );
 
 const cell6 = synths[6];
-const synthCell6 = new Tone.Sequence(
+const synthCell6 = new Sequence(
   function (time, note) {
     cell6.triggerAttackRelease(note, "10hz", time);
   },
@@ -64,7 +64,7 @@ const synthCell6 = new Tone.Sequence(
 );
 
 const cell7 = synths[7];
-const synthCell7 = new Tone.Sequence(
+const synthCell7 = new Sequence(
   function (time, note) {
     cell7.triggerAttackRelease(note, "1hz", time);
   },
@@ -73,7 +73,7 @@ const synthCell7 = new Tone.Sequence(
 );
 
 const cell8 = synths[8];
-const synthCell8 = new Tone.Sequence(
+const synthCell8 = new Sequence(
   function (time, note) {
     cell8.triggerAttackRelease(note, "10hz", time);
   },
@@ -82,7 +82,7 @@ const synthCell8 = new Tone.Sequence(
 );
 
 const cell9 = synths[9];
-const synthCell9 = new Tone.Sequence(
+const synthCell9 = new Sequence(
   function (time, note) {
     cell9.triggerAttackRelease(note, "10hz", time);
   },
@@ -91,7 +91,7 @@ const synthCell9 = new Tone.Sequence(
 );
 
 const cell10 = synths[10];
-const synthCell10 = new Tone.Sequence(
+const synthCell10 = new Sequence(
   function (time, note) {
     cell10.triggerAttackRelease(note, "0.5hz", time);
   },
@@ -100,7 +100,7 @@ const synthCell10 = new Tone.Sequence(
 );
 
 const cell11 = synths[11];
-const synthCell11 = new Tone.Sequence(
+const synthCell11 = new Sequence(
   function (time, note) {
     cell11.triggerAttackRelease(note, "10hz", time);
   },
@@ -109,7 +109,7 @@ const synthCell11 = new Tone.Sequence(
 );
 
 const cell12 = synths[12];
-const synthCell12 = new Tone.Sequence(
+const synthCell12 = new Sequence(
   function (time, note) {
     cell12.triggerAttackRelease(note, "1hz", time);
   },
@@ -118,7 +118,7 @@ const synthCell12 = new Tone.Sequence(
 );
 
 const cell13 = synths[13];
-const synthCell13 = new Tone.Sequence(
+const synthCell13 = new Sequence(
   function (time, note) {
     cell13.triggerAttackRelease(note, "10hz", time);
   },
@@ -127,7 +127,7 @@ const synthCell13 = new Tone.Sequence(
 );
 
 const cell14 = synths[14];
-const synthCell14 = new Tone.Sequence(
+const synthCell14 = new Sequence(
   function (time, note) {
     cell14.triggerAttackRelease(note, "10hz", time);
   },
@@ -136,7 +136,7 @@ const synthCell14 = new Tone.Sequence(
 );
 
 const cell15 = synths[15];
-const synthCell15 = new Tone.Sequence(
+const synthCell15 = new Sequence(
   function (time, note) {
     cell15.triggerAttackRelease(note, "10hz", time);
   },
@@ -145,7 +145,7 @@ const synthCell15 = new Tone.Sequence(
 );
 
 const cell16 = synths[16];
-const synthCell16 = new Tone.Sequence(
+const synthCell16 = new Sequence(
   function (time, note) {
     cell16.triggerAttackRelease(note, "1hz", time);
   },
@@ -154,7 +154,7 @@ const synthCell16 = new Tone.Sequence(
 );
 
 const cell17 = synths[17];
-const synthCell17 = new Tone.Sequence(
+const synthCell17 = new Sequence(
   function (time, note) {
     cell17.triggerAttackRelease(note, "10hz", time);
   },
@@ -163,7 +163,7 @@ const synthCell17 = new Tone.Sequence(
 );
 
 const cell18 = synths[18];
-const synthCell18 = new Tone.Sequence(
+const synthCell18 = new Sequence(
   function (time, note) {
     cell18.triggerAttackRelease(note, "10hz", time);
   },

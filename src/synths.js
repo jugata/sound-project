@@ -1,16 +1,16 @@
-import * as Tone from "tone";
+import { MembraneSynth, Synth } from "tone";
 
 
 const synths = [
   // DRONE
-  new Tone.Synth(),
+  new Synth(),
   // Cell 1
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
+  new Synth(),
+  new Synth(),
+  new Synth(),
+  new Synth(),
   //Long 5
-  new Tone.Synth({
+  new Synth({
     oscillator: {
       type: 'fmsquare'
     },
@@ -21,21 +21,21 @@ const synths = [
       release: 4
     }
   }),
-  new Tone.Synth(),
-  new Tone.MembraneSynth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
+  new Synth(),
+  new MembraneSynth(),
+  new Synth(),
+  new Synth(),
+  new Synth(),
+  new Synth(),
   // 12
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.MembraneSynth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth(),
-  new Tone.Synth()
+  new Synth(),
+  new Synth(),
+  new Synth(),
+  new MembraneSynth(),
+  new Synth(),
+  new Synth(),
+  new Synth(),
+  new Synth()
 ];
 
 const notes = [

@@ -1,4 +1,4 @@
-import * as Tone from "tone";
+import { Transport, Sequence } from "tone";
 import { synths, notes } from './synths'
 import { synthCells } from './utils/synthCells'
 import { isPlaying } from './utils/playing'
@@ -8,9 +8,9 @@ synths.forEach(synth => synth.toMaster());
 //=================TEMPO SELECTOR===================\\
 const select = document.getElementsByTagName('select')[0]
 
-Tone.Transport.bpm.value = 100;
+Transport.bpm.value = 100;
 function pickTempo(event) {
-  Tone.Transport.bpm.value = event.target.value;
+  Transport.bpm.value = event.target.value;
 }
 select.addEventListener('change', pickTempo)
 
@@ -35,12 +35,12 @@ document.getElementById("stop").addEventListener("click", function () {
   if (dronePlay) {
     dronePlay = false
   }
-  Tone.Transport.stop()
+  Transport.stop()
 });
 
 //==================DRONE===================\\
 const drone = synths[0];
-const droner = new Tone.Sequence(
+const droner = new Sequence(
   function (time, note) {
     drone.triggerAttackRelease(note, "10hz", time);
   },
@@ -54,7 +54,7 @@ droneButton.addEventListener("click", function () {
   if (!dronePlay) {
     this.className = "active-drone"
     droner.start()
-    Tone.Transport.start("+0.1");
+    Transport.start("+0.1");
     dronePlay = true;
   } else {
     droner.stop();
@@ -65,7 +65,7 @@ droneButton.addEventListener("click", function () {
 //==================CELL 1==================\\
 document.getElementById("1").addEventListener("click", function () {
   if (!dronePlay) {
-    Tone.Transport.start("+0.1");
+    Transport.start("+0.1");
   }
   if (!isPlaying[0]) {
     synthCells[0].start()
@@ -83,7 +83,7 @@ document.getElementById("1").addEventListener("click", function () {
 const player = (e) => {
   if (e.target.id !== "drone" && e.target.id !== "stop" && e.target.id !== "1") {
     let id = e.target.id - 1
-    console.log("in player", e.srcElement)
+    console.log("clicked", id)
     if (!isPlaying[id]) {
       synthCells[id].start()
       isPlaying[id] = true;
