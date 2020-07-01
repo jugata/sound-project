@@ -1,5 +1,5 @@
 import * as Tone from "tone";
-console.log("TONE IS >>>>>>>>", Tone)
+
 
 //TEMPO SELECTOR
 const select = document.getElementsByTagName('select')[0]
@@ -297,10 +297,10 @@ document.getElementById("drone").addEventListener("click", function () {
   //synths[0].triggerAttackRelease("C6", "16n");
 
   if (!dronePlay) {
-    if (Tone.context.state !== 'running') {
-      console.log("here")
-      Tone.context.resume();
-    }
+    // if (Tone.context.state !== 'running') {
+    //   console.log("here")
+    //   Tone.context.resume();
+    // }
     Tone.Transport.start("+0.1");
     droner.start()
     dronePlay = true;
@@ -313,19 +313,21 @@ document.getElementById("drone").addEventListener("click", function () {
 
 
 document.getElementById("btn1").addEventListener("click", function () {
-
+  console.log("pushed")
   if (!playing1) {
     synthCell1.start()
     playing1 = true;
+    this.className = "active"
   } else {
     synthCell1.stop();
+    this.className = ""
     playing1 = false;
   }
 });
 
 document.getElementById("btn2").addEventListener("click", function () {
   if (!playing2) {
-    // Tone.Transport.start();
+
     synthCell2.start()
     playing2 = true;
   } else {
