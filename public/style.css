@@ -61,11 +61,17 @@ button:focus {
   outline: none;
 }
 
- #drone {
+ .inactive-drone {
    height: 40px;
    background-color: #06D6A0;
    color: #197BBD;
    /* box-shadow: 2px 2px gray; */
+ }
+
+ .active-drone {
+  border-color: #FFFF82;
+  background-color:  #FFFF82;
+  color: #197BBD;
  }
 
  #stop {
@@ -97,8 +103,8 @@ select:focus {
   outline: none;
 }
 
- .active {
-  background-color: white;
-  color: #197BBD;
-  border: none;
- }
+.active {
+background-color: white;
+color: #197BBD;
+border: none;
+}

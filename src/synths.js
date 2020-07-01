@@ -10,13 +10,24 @@ const synths = [
   new Tone.Synth(),
   new Tone.Synth(),
   //Long 5
+  new Tone.Synth({
+    oscillator: {
+      type: 'fmsquare'
+    },
+    envelope: {
+      attack: 2,
+      decay: 1,
+      sustain: 0.4,
+      release: 4
+    }
+  }),
   new Tone.Synth(),
   new Tone.MembraneSynth(),
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
-  // 11
+  // 12
   new Tone.Synth(),
   new Tone.Synth(),
   new Tone.Synth(),
@@ -57,20 +68,8 @@ const notes = [
 
 ];
 
-const synthA = new Tone.Synth({
-  oscillator: {
-    type: 'fmsquare'
-  },
-  envelope: {
-    attack: 2,
-    decay: 1,
-    sustain: 0.4,
-    release: 4
-  }
-}).toMaster()
 
 export {
   synths,
   notes,
-  synthA
 }
