@@ -7,7 +7,7 @@
     "build:dev": "webpack -w",
     "build:prod": "webpack -p --env production",
     "start": "node app.js",
-    "heroku-postBuild": "npm run build:prod"
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "",
   "license": "ISC",
