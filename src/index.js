@@ -17,25 +17,32 @@ select.addEventListener('change', pickTempo)
 //==================CLASS TOGGLING===================\\
 let dronePlay = false;
 const activeButtons = document.getElementsByClassName("active")
+
 const deactivate = (HTMLColl) => {
   const arrayed = Array.from(HTMLColl)
-  if (Array.isArray(arrayed))
+  if (Array.isArray(arrayed)) {
     arrayed.forEach(element => element.className = "")
-  if (dronePlay) {
+    synthCells.forEach(synthCell => synthCell.stop())
+    for (let i = 0; i < isPlaying.length; i++) {
+      if (isPlaying[i] === true) {
+        isPlaying[i] = false
+      }
+    }
+  }
+  if (droneButton.className === "active-drone") {
     droner.stop()
     droneButton.className = "inactive-drone"
     dronePlay = false
   }
-  synthCells.forEach(synthCell => synthCell.stop())
+  isPlaying.forEach(play => console.log(play))
+
+
 }
 
 //=====================STOP=======================\\
 document.getElementById("stop").addEventListener("click", function () {
   deactivate(activeButtons)
-  if (dronePlay) {
-    dronePlay = false
-  }
-  Transport.stop()
+  // Transport.stop()
 });
 
 //==================DRONE===================\\
@@ -52,9 +59,9 @@ const droneButton = document.getElementById("drone")
 
 droneButton.addEventListener("click", function () {
   if (!dronePlay) {
-    this.className = "active-drone"
-    droner.start()
     Transport.start("+0.1");
+    droner.start()
+    this.className = "active-drone"
     dronePlay = true;
   } else {
     droner.stop();

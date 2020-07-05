@@ -69,9 +69,10 @@ button:focus {
  }
 
  .active-drone {
-  border-color: #FFFF82;
-  background-color:  #FFFF82;
-  color: #197BBD;
+  border-color: #06D6A0;
+  background-color:  #06D6A0;
+  color: white;
+  filter: drop-shadow(0 0 75px #06D6A0);
  }
 
  #stop {
@@ -106,4 +107,5 @@ select:focus {
 background-color: white;
 color: #197BBD;
 border: none;
+filter: drop-shadow(0 0 75px #00b7ff);
 }
