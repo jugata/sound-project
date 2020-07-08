@@ -17,6 +17,9 @@ Set-up:
 localhost:3000
 
 Playing the Piece:
-1. Click on Start/Drone --- if playing with multiple users on multiple devices, only 1 user activates the         drone, while everyone else begins at Cell 1.
-2. Activate the cells in order.
-3. Have no more than 4-5 consecutive cells playing at one time.
+1. Click Start/Pulse
+2. Activate Cell 1
+3. Continue to activate the cells in order, but have no more than 3-4 adjacent cells active at a time. Take       your time progressing through the cells.
+4. The piece will end the way it began, with just the Pulse.
+
+Note: If playing with multiple performers/devices, there should be only one Pulse activated.

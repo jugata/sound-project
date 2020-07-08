@@ -1,22 +1,30 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: #27187E;
-  color: #FFFAFF
+  color: #FDF7FA;
+  margin:0;
 }
 
 header {
   height: 120px;
   display: flex;
   justify-content: space-around;
-  background-color:#197BBD;
   text-shadow: 2px 2px #5B6057;
   box-shadow: 3px 5px #5B6057;
   border-radius: 5px;
+  background-color:#197BBD;
+  color:#06D6A0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  margin-top: 0;
+}
 
+a {
+  color: #06D6A0;
 }
 
  h1 {
-   color:#06D6A0;
    font-size: 60px;
    padding: 0
  }
@@ -26,7 +34,7 @@ header {
    margin-top: 50px;
  }
 
- .div1 {
+ .tempo-box {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -34,39 +42,48 @@ header {
    color: white
  }
 
- .div2 {
+ .cell-set {
   display: flex;
   justify-content: center;
-  margin-top: 10px
+  margin: 10px 10px 20px;
 }
 
- button {
-   height: 40px;
-   width: 180px;
-   background-color: #197BBD;
-   color: white;
-   text-shadow: 1px 1px  rgb(37, 35, 87);
-   align-content: center;
-   margin: 10px 5px 10px 5px;
-   font-size: 16px;
-   border-radius: 5px;
-   /* box-shadow: 2px 2px #06D6A0; */
- }
+button {
+  background-color: #197BBD;
+  color: #FDF7FA;
+  height: 40px;
+  width: 180px;
+  align-content: center;
+  margin: 10px 5px 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  border-width: 0;
+  border-style: solid;
+
+}
+.cell-set > button {
+  margin: 0 5px 0;
+  height: 60px;
+  width: 180px;
+}
 
  button:hover {
-	border-color: #93BEDF;
+  border-width: 1px;
+  /* border-color: #93BEDF; */
+  filter: drop-shadow(0 0 5px  #06D6A0);
+  text-shadow: 1px 1px #06D6A0;
 }
 
 button:focus {
   outline: none;
 }
 
- .inactive-drone {
-   height: 40px;
-   background-color: #06D6A0;
-   color: #197BBD;
-   /* box-shadow: 2px 2px gray; */
- }
+.inactive-drone {
+  height: 40px;
+  background-color: #06D6A0;
+  color: #27187E;
+  /* box-shadow: 2px 2px gray; */
+}
 
  .active-drone {
   border-color: #06D6A0;
@@ -104,8 +121,33 @@ select:focus {
 }
 
 .active {
-background-color: white;
+background-color: #FFF3F0;
 color: #197BBD;
 border: none;
-filter: drop-shadow(0 0 75px #00b7ff);
+filter: drop-shadow(0 0 75px #06D6A0);
 }
+
+.cell-block {
+  margin-bottom: 100px;
+}
+
+.info-block {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 160px;
+}
+
+.instructions {
+  font-size: 18px;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.instructions > p {
+  color: #DBD053;
+}
+
+

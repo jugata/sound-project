@@ -90,15 +90,17 @@ document.getElementById("1").addEventListener("click", function () {
 const player = (e) => {
   if (e.target.id !== "drone" && e.target.id !== "stop" && e.target.id !== "1") {
     let id = e.target.id - 1
-    console.log("clicked", id)
+    console.log(id)
     if (!isPlaying[id]) {
       synthCells[id].start()
       isPlaying[id] = true;
+      console.log(">>>>>>>>>>", e.target.className)
       e.srcElement.className = "active"
     } else {
       synthCells[id].stop();
       e.srcElement.className = ""
       isPlaying[id] = false;
+      console.log("/////////", e.srcElement.className)
     }
   }
 }

@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>In C</title>
   <script src="./bundle.js" defer></script>
+  <script src="https://use.fontawesome.com/c109a1db0d.js"></script>
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
@@ -14,14 +15,30 @@
 
 <body>
   <header>
-    <h1>In C</h1>
+    <h1>Synth In C</h1>
   </header>
+  <div class="info-block">
+    <div class="instructions">
+      <h3>Welcome to Synth In C. Inspired by Terry Riley's 1964 musical composition In C, you can explore and perform a miniaturized
+        version of this masterpiece alone, or with others.</h3>
+      <p>For an in-depth look at how the original piece is performed,
+        <a href="https://en.wikipedia.org/wiki/In_C#Technique" target="_blank">check out this wiki page.</a> Otherwise, follow these simple rules:</p>
+      <ol>
+        <li>Click Start/Pulse</li>
+        <li>Activate Cell 1</li>
+        <li>Continue to activate the cells in order, but have no more than 3-4 adjacent cells active at a time. Take your time
+          progressing through the cells.</li>
+        <li>The piece will end the way it began, with just the Pulse.</li>
+      </ol>
+      Note: If playing with multiple performers/devices, there should be only one Pulse activated.
+    </div>
+  </div>
   <div>
     <div id="controls">
-      <button class="inactive-drone" type="submit" id="drone">DRONE/START</button>
+      <button class="inactive-drone" type="submit" id="drone">START/PULSE</button>
       <button type="submit" id="stop">STOP</button>
     </div>
-    <div class="div1">
+    <div class="tempo-box">
       TEMPO
       <select>
         <option value="100">100 bpm</option>
@@ -29,33 +46,33 @@
         <option value="160">160 bpm</option>
       </select>
     </div>
-    <br>
-    <div class="div2">
-      <button type="submit" id="1" value="cell1">CELL 1</button>
-      <button type="submit" id="2" value="cell2">CELL 2</button>
-      <button type="submit" id="3" value="cell3">CELL 3</button>
-      <button type="submit" id="4" value="cell4">CELL 4</button>
-      <button type="submit" id="5" value="cell5">CELL 5</button>
-      <button type="submit" id="6" value="cell6">CELL 6</button>
+    <div class="cell-block">
+      <div class="cell-set">
+        <button type="submit" id="1" value="cell1">CELL 1</button>
+        <button type="submit" id="2" value="cell2">CELL 2</button>
+        <button type="submit" id="3" value="cell3">CELL 3</button>
+        <button type="submit" id="4" value="cell4">CELL 4</button>
+        <button type="submit" id="5" value="cell5">CELL 5</button>
+        <button type="submit" id="6" value="cell6">CELL 6</button>
 
+      </div>
+      <div class="cell-set">
+        <button type="submit" id="7" value="cell7">CELL 7</button>
+        <button type="submit" id="8" value="cell8">CELL 8</button>
+        <button type="submit" id="9" value="cell9">CELL 9</button>
+        <button type="submit" id="10" value="cel10">CELL 10</button>
+        <button type="submit" id="11" value="cell11">CELL 11</button>
+        <button type="submit" id="12" value="cell12">CELL 12</button>
+      </div>
+      <div class="cell-set">
+        <button type="submit" id="13" value="cell13">CELL 13</button>
+        <button type="submit" id="14" value="cell14">CELL 14</button>
+        <button type="submit" id="15" value="cell15">CELL 15</button>
+        <button type="submit" id="16" value="cell16">CELL 16</button>
+        <button type="submit" id="17" value="cell17">CELL 17</button>
+        <button type="submit" id="18" value="cell18">CELL 18</button>
+      </div>
     </div>
-    <div class="div2">
-      <button type="submit" id="7" value="cell7">CELL 7</button>
-      <button type="submit" id="8" value="cell8">CELL 8</button>
-      <button type="submit" id="9" value="cell9">CELL 9</button>
-      <button type="submit" id="10" value="cel10">CELL 10</button>
-      <button type="submit" id="11" value="cell11">CELL 11</button>
-      <button type="submit" id="12" value="cell12">CELL 12</button>
-    </div>
-    <div class="div2">
-      <button type="submit" id="13" value="cell13">CELL 13</button>
-      <button type="submit" id="14" value="cell14">CELL 14</button>
-      <button type="submit" id="15" value="cell15">CELL 15</button>
-      <button type="submit" id="16" value="cell16">CELL 16</button>
-      <button type="submit" id="17" value="cell17">CELL 17</button>
-      <button type="submit" id="18" value="cell18">CELL 18</button>
-    </div>
-
   </div>
 </body>
 
