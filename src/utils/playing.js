@@ -1,22 +1,28 @@
 
-let playing1 = false;
-let playing2 = false;
-let playing3 = false;
-let playing4 = false;
-let playing5 = false;
-let playing6 = false;
-let playing7 = false;
-let playing8 = false;
-let playing9 = false;
-let playing10 = false;
-let playing11 = false;
-let playing12 = false;
-let playing13 = false;
-let playing14 = false;
-let playing15 = false;
-let playing16 = false;
-let playing17 = false;
-let playing18 = false;
+let playing1 = false
+let playing2 = false
+let playing3 = false
+let playing4 = false
+let playing5 = false
+let playing6 = false
+let playing7 = false
+let playing8 = false
+let playing9 = false
+let playing10 = false
+let playing11 = false
+let playing12 = false
+let playing13 = false
+let playing14 = false
+let playing15 = false
+let playing16 = false
+let playing17 = false
+let playing18 = false
+let playing19 = false
+let playing20 = false
+let playing21 = false
+let playing22 = false
+let playing23 = false
+let playing24 = false
 
 const isPlaying = [
   playing1,
@@ -37,8 +43,14 @@ const isPlaying = [
   playing16,
   playing17,
   playing18,
+  playing19,
+  playing20,
+  playing21,
+  playing22,
+  playing23,
+  playing24
 ]
 
 export {
-  isPlaying,
+  isPlaying
 }

@@ -124,7 +124,7 @@ select:focus {
 background-color: #FFF3F0;
 color: #197BBD;
 border: none;
-filter: drop-shadow(0 0 75px #06D6A0);
+filter: drop-shadow(0 0 20px #06D6A0);
 }
 
 .cell-block {
@@ -134,7 +134,7 @@ filter: drop-shadow(0 0 75px #06D6A0);
 .info-block {
   display: flex;
   justify-content: space-around;
-  padding-top: 160px;
+  padding-top: 130px;
 }
 
 .instructions {
