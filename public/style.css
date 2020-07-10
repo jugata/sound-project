@@ -65,6 +65,7 @@ button {
   margin: 0 5px 0;
   height: 60px;
   width: 180px;
+  font-size: 20px;
 }
 
  button:hover {
@@ -97,6 +98,11 @@ button:focus {
    background-color: #B8366A;
  }
 
+ #stop:active {
+  transform: translateY(2px);
+  font-size: 18px;
+}
+
  select {
    border-radius: 5px;
    display: block;
@@ -124,7 +130,7 @@ select:focus {
 background-color: #FFF3F0;
 color: #197BBD;
 border: none;
-filter: drop-shadow(0 0 20px #06D6A0);
+filter: drop-shadow(0 0 30px #06D6A0);
 }
 
 .cell-block {

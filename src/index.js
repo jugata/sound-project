@@ -24,9 +24,7 @@ const deactivate = (HTMLColl) => {
     arrayed.forEach(element => element.className = "")
     synthCells.forEach(synthCell => synthCell.stop())
     for (let i = 0; i < isPlaying.length; i++) {
-      if (isPlaying[i] === true) {
-        isPlaying[i] = false
-      }
+      if (isPlaying[i]) isPlaying[i] = false
     }
   }
   if (droneButton.className === "active-drone") {
@@ -39,7 +37,6 @@ const deactivate = (HTMLColl) => {
 //=====================STOP=======================\\
 document.getElementById("stop").addEventListener("click", function () {
   deactivate(activeButtons)
-  // Transport.stop()
 })
 
 //==================DRONE===================\\
@@ -87,14 +84,16 @@ document.getElementById("1").addEventListener("click", function () {
 const player = (e) => {
   if (e.target.id !== "drone" && e.target.id !== "stop" && e.target.id !== "1") {
     let id = e.target.id - 1
-    if (!isPlaying[id]) {
-      synthCells[id].start()
-      isPlaying[id] = true
-      e.srcElement.className = "active"
-    } else {
-      synthCells[id].stop()
-      e.srcElement.className = ""
-      isPlaying[id] = false
+    if (id >= 0) {
+      if (!isPlaying[id]) {
+        synthCells[id].start()
+        isPlaying[id] = true
+        e.srcElement.className = "active"
+      } else {
+        synthCells[id].stop()
+        e.srcElement.className = ""
+        isPlaying[id] = false
+      }
     }
   }
 }
