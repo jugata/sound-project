@@ -16,12 +16,12 @@ const synths = [
   //Cell 1
   new Synth(),
   new Synth(),
-  choralSynth,
+  new Synth(),
   new Synth(),
   //Cell 5
   new Synth(),
   new Synth(),
-  choralSynth,
+  new Synth(),
   longSynth,
   //Cell 9
   new MembraneSynth(),

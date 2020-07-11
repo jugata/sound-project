@@ -71,7 +71,7 @@ button {
  button:hover {
   border-width: 1px;
   /* border-color: #93BEDF; */
-  filter: drop-shadow(0 0 5px  #06D6A0);
+  /* filter: drop-shadow(0 0 5px  #06D6A0); */
   text-shadow: 1px 1px #06D6A0;
 }
 
@@ -90,7 +90,7 @@ button:focus {
   border-color: #06D6A0;
   background-color:  #06D6A0;
   color: white;
-  filter: drop-shadow(0 0 75px #06D6A0);
+  /* filter: drop-shadow(0 0 75px #06D6A0); */
  }
 
  #stop {
@@ -101,6 +101,10 @@ button:focus {
  #stop:active {
   transform: translateY(2px);
   font-size: 18px;
+}
+
+#drone:active {
+  transform: translateY(2px);
 }
 
  select {
@@ -128,9 +132,10 @@ select:focus {
 
 .active {
 background-color: #FFF3F0;
-color: #197BBD;
+color: #27187E;
+/* color: #197BBD; */
 border: none;
-filter: drop-shadow(0 0 30px #06D6A0);
+/* filter: drop-shadow(0 0 30px #06D6A0); */
 }
 
 .cell-block {
