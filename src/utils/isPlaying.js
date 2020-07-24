@@ -24,7 +24,7 @@ let playing22 = false
 let playing23 = false
 let playing24 = false
 
-const isPlaying = [
+export default [
   playing1,
   playing2,
   playing3,
@@ -51,6 +51,4 @@ const isPlaying = [
   playing24
 ]
 
-export {
-  isPlaying
-}
+

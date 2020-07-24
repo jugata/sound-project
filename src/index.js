@@ -1,7 +1,7 @@
 import { Transport, Sequence } from "tone"
 import { synths, notes } from './synths'
 import { synthCells } from './utils/synthCells'
-import { isPlaying } from './utils/playing'
+import isPlaying from './utils/isPlaying'
 
 synths.forEach(synth => synth.toMaster())
 
