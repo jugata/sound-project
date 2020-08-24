@@ -21,7 +21,20 @@ header {
 }
 
 a {
-  color: #06D6A0;
+  color: #DBD053;
+  text-decoration: none;
+  background-image: linear-gradient(#222b40, #222b40),
+    linear-gradient(#06D6A0, #06D6A0),
+    linear-gradient(#B8366A, #B8366A);
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 2s linear;
+}
+
+a:hover {
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
 }
 
  h1 {
