@@ -20,7 +20,7 @@ const synths = [
   new Synth(),
   //Cell 5
   new Synth(),
-  new Synth(),
+  longSynth,
   new Synth(),
   longSynth,
   //Cell 9
@@ -55,7 +55,7 @@ const notes = [
   //cell 4
   [null, "E4", "F4", "G4"],
   ["E4", "F4", "G4", null],
-  ["C2", null, null, [null], "C3", null, [null]],
+  ["C3", null, null, [null], "C4", null, [null]],
   //cell 7
   [null, [null, ["C7", "C7"]], "C7", null, null, null, null, [null, ["C6", "C6"]], "C6", null, null, null],
   ["G3", "G3", "G3", "F3", "F3", "F3", "F3", null, null, null, [null]],
