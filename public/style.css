@@ -5,6 +5,7 @@ body {
   margin:0;
 }
 
+
 header {
   height: 120px;
   display: flex;
@@ -100,11 +101,19 @@ button:focus {
   /* box-shadow: 2px 2px gray; */
 }
 
+@keyframes drone-pulse {
+    0%   {background-color: #06D6A0;
+          }
+    66%  {background-color: #91f3d9;
+    }
+    100% {background-color: #06D6A0;
+    }
+}
+
  .active-drone {
   border-color: #06D6A0;
-  background-color:  #06D6A0;
+  animation: drone-pulse 3s infinite;
   color: white;
-  /* filter: drop-shadow(0 0 75px #06D6A0); */
  }
 
  #stop {
@@ -145,10 +154,19 @@ select:focus {
   outline: none;
 }
 
+@keyframes drone-cell {
+  0%   {color: #27187E;
+  }
+66%  {color: #a297ce;
+}
+100% {color: #27187E;
+}
+}
+
 .active {
 background-color: #FFF3F0;
-color: #27187E;
-/* color: #197BBD; */
+animation: drone-cell 2s infinite;
+/* color: #27187E; */
 border: none;
 /* filter: drop-shadow(0 0 30px #06D6A0); */
 }
