@@ -1,14 +1,14 @@
 
 module.exports = (env) => {
-  const isProduction = env === "production"
+  const isProduction = env && env.production
 
   return {
-    mode: "none",
+    mode: isProduction ? 'production' : 'development',
     entry: './src/index.js',
     output: {
       path: __dirname + '/public',
       filename: 'bundle.js'
     },
-    devtool: isProduction ? 'source-map' : "cheap-module-eval-sourcemap"
+    devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map'
   }
 }

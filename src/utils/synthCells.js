@@ -31,7 +31,7 @@ const synthCell4 = new Sequence(
 
 const cell5 = synths[5]
 const synthCell5 = new Sequence(
-  (time, note) => { cell4.triggerAttackRelease(note, "32n", time) },
+  (time, note) => { cell5.triggerAttackRelease(note, "32n", time) },
   notes[5],
   "8n"
 )

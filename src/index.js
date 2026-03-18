@@ -3,7 +3,7 @@ import { synths, notes } from './synths'
 import { synthCells } from './utils/synthCells'
 import isPlaying from './utils/isPlaying'
 
-synths.forEach(synth => synth.toMaster())
+synths.forEach(synth => synth.toDestination())
 
 //=================TEMPO SELECTOR===================\\
 const select = document.getElementsByTagName('select')[0]
@@ -88,10 +88,10 @@ const player = (e) => {
       if (!isPlaying[id]) {
         synthCells[id].start()
         isPlaying[id] = true
-        e.srcElement.className = "active"
+        e.target.className = "active"
       } else {
         synthCells[id].stop()
-        e.srcElement.className = ""
+        e.target.className = ""
         isPlaying[id] = false
       }
     }

@@ -1,7 +1,7 @@
 import { MembraneSynth, Synth, Chorus } from "tone"
 
-const chorus = new Chorus(4, 2.5, 0.5)
-const choralSynth = new Synth(4, Synth).connect(chorus)
+const chorus = new Chorus(4, 2.5, 0.5).toDestination().start()
+const choralSynth = new Synth().connect(chorus)
 const longSynth = new Synth({
   envelope: {
     attack: 0,
