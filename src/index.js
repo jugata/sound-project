@@ -1,9 +1,17 @@
-import { Transport, Sequence } from "tone"
+import { Transport, Sequence, getContext, start } from "tone"
 import { synths, notes } from './synths'
 import { synthCells } from './utils/synthCells'
 import isPlaying from './utils/isPlaying'
 
 synths.forEach(synth => synth.toDestination())
+
+// Safari suspends the AudioContext until a user gesture — resume on first interaction
+function resumeAudioContext() {
+  if (getContext().state === 'suspended') start()
+  document.removeEventListener('click', resumeAudioContext)
+}
+
+document.addEventListener('click', resumeAudioContext)
 
 //=================TEMPO SELECTOR===================\\
 const select = document.getElementsByTagName('select')[0]
