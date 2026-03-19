@@ -5,19 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack -w",
-    "build:prod": "webpack --env production",
-    "start": "node app.js",
-    "heroku-postbuild": "npm run build:prod"
+    "build:prod": "webpack --env production"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2",
-    "morgan": "^1.10.0",
     "tone": "^15.1.22"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14",
     "webpack": "^5.105.4",
     "webpack-cli": "^5.1.4"
   }

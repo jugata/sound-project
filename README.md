@@ -4,17 +4,16 @@ An interactive app based on Terry Riley's 1964 minimalist masterpiece *In C*.
 
 Can be used to perform the piece individually or collaboratively with multiple performers.
 
-Built with Node.js + Tone.js.
+Built with Tone.js.
 
-## Setup
+## Local Development
 
 ```
 npm install
 npm run build:dev
-npm start
 ```
 
-Then open `localhost:3000`.
+Then open `public/index.html` in your browser.
 
 ## How to Play
 
